@@ -42,6 +42,8 @@ var table = "";
 var incomeList;
 var expenseList;
 
+
+
 //////////////GELİR METHOD//////////////////////
 
 //Gelir Listesi
