@@ -17,6 +17,7 @@ class expenseModel {
     }
 }
 
+var userAddmethod = function(){};
 
 var incomeListmethod = function () { };
 var incomeAddPagemethod = function () { };
@@ -41,6 +42,9 @@ var expenseupdateObj;
 var table = "";
 var incomeList;
 var expenseList;
+
+
+
 
 
 
@@ -445,7 +449,22 @@ expenseEditmethod = function (params) {
 
 //Gelir sil.
 expenseDeletemethod = function (params) {
-    console.log(params);
+    try {
+        var settings = {
+            "url": "http://localhost:3000/api/expense/Delete/" + params,
+            "method": "POST",
+            "timeout": 0,
+        };
+
+        $.ajax(settings).done(function (response) {
+            console.log(response);
+            expenseListmethod();
+        });
+    } catch (error) {
+        console.log("Hata" + error);
+    }
+
+
 }
 
 //Gider Kaydetmek için kayıt formunun sayfaya oluşturulduğu method.
